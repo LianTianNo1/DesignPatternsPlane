@@ -86,13 +86,13 @@ public class Panel extends JPanel {
                 if (e.getKeyCode() == KeyEvent.VK_A || e.getKeyCode() == KeyEvent.VK_LEFT) {
                     plane.fly.setX(plane.fly.getX() - 10);
                     // 边界判断
-                    if (plane.fly.getX() < 0) {
+                    if (plane.fly.getX() - plane.fly.getImage().getWidth()/2 < 0) {
                         plane.fly.setX(0);
                     }
                 } else if (e.getKeyCode() == KeyEvent.VK_D || e.getKeyCode() == KeyEvent.VK_RIGHT) {
                     plane.fly.setX(plane.fly.getX() + 10);
                     if (plane.fly.getX() > bg.getWidth()) {
-                        plane.fly.setX(bg.getWidth() - plane.fly.getImage().getWidth() / 2);
+                        plane.fly.setX(bg.getWidth() - plane.fly.getImage().getWidth());
                     }
                 } else if (e.getKeyCode() == KeyEvent.VK_W || e.getKeyCode() == KeyEvent.VK_UP) {
                     plane.fly.setY(plane.fly.getY() - 10);
@@ -102,7 +102,7 @@ public class Panel extends JPanel {
                 } else if (e.getKeyCode() == KeyEvent.VK_S || e.getKeyCode() == KeyEvent.VK_DOWN) {
                     plane.fly.setY(plane.fly.getY() + 10);
                     if (plane.fly.getY() > bg.getHeight()) {
-                        plane.fly.setY(bg.getHeight() - plane.fly.getImage().getHeight() / 2);
+                        plane.fly.setY(bg.getHeight() - plane.fly.getImage().getHeight());
                     }
                 }
                 //重绘
@@ -113,8 +113,8 @@ public class Panel extends JPanel {
     }
 
     @Override
-    public void print(Graphics g) {
-        super.print(g);
+    public void paint(Graphics g) {
+        super.paint(g);
         g.drawString("1234434", 200, 20);
         g.drawImage(bg, 0, 0, null); // 画背景
         g.drawImage(plane.fly.getImage(), plane.fly.getX(), plane.fly.getY(), null); //画我方飞机

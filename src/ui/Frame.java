@@ -9,6 +9,6 @@ public class Frame extends JFrame {
         setTitle("飞机大战");
         setLocationRelativeTo(null);
         setResizable(false);//        不可拖动
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);//        退出选项
+        setDefaultCloseOperation(EXIT_ON_CLOSE);//        退出选项
     }
 }

@@ -11,7 +11,7 @@ public class EnemyPlane {
         int index = random.nextInt(15) + 1;
         String path = index<10 ? "0"+index : ""+index;
         String name = "ep" + path + ".png";
-        fly.setImage(GetImg.getImg(name));
+        fly.setImage(name);
         fly.setX(random.nextInt(512-fly.getImage().getWidth()));
         fly.setY(0);
     }

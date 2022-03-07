@@ -5,7 +5,7 @@ public class Plane {
 
     public Plane(){
         fly = new FlyObject();
-        fly.setImage(GetImg.getImg("hero.png"));
+        fly.setImage("hero.png");
         fly.setX(200);
         fly.setY(500);
     }

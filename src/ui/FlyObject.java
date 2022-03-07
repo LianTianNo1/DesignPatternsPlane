@@ -12,8 +12,8 @@ public class FlyObject {
         return image;
     }
 
-    public void setImage(BufferedImage image) {
-        this.image = image;
+    public void setImage(String image) {
+        this.image = GetImg.getImg(image);
     }
 
     public int getX() {

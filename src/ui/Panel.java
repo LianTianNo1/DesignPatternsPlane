@@ -104,7 +104,7 @@ public class Panel extends JPanel {
 
     public Panel(Frame frame) {
         bg = GetImg.getImg("bg5.jpg");
-        plane = new Plane();
+        plane = Plane.getInstance();
 
         // 鼠标的事件
         MouseAdapter mouseAdapter = new MouseAdapter() {

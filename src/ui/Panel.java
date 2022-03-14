@@ -73,7 +73,8 @@ public class Panel extends JPanel {
     private void fiCreate() {
         fiFlag++;
         if (fiFlag >= 5) {
-            Fire fire = new Fire(plane);
+//            Fire fire = new Fire(plane);
+            Fire fire = (Fire) Factory.getBean(plane);
             fires.add(fire);
             fiFlag = 0;
         }
@@ -94,7 +95,7 @@ public class Panel extends JPanel {
         // 子弹的移动
         for (int i = 0; i < fires.size(); i++) {
             Fire fire = fires.get(i);
-            fire.fly.setY(fire.fly.getY() - 15);
+            fire.move();
             // 销毁处理
             if (fire.fly.getY() < 0) {
                 fires.remove(fire);
